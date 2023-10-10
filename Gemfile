@@ -17,6 +17,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "sassc-rails"
+# gem "bootstrap", ~> "5.3.1"
 
 # Additional 
 gem "devise" #rails generate devise:install
