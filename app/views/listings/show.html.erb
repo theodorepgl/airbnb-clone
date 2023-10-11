@@ -6,7 +6,7 @@
 <p>Price: <%= @listing.price %></p>
 <p>Property Type: <%= @listing.property_type %></p>
 <p>Host: <%= @listing.user.email %></p>
-<p>Availabilty: <%= @listing.available %></p>
+<p>Available: <%= @listing.available %></p>
 
 <% if current_user.id == @listing.user.id %>
 	<%= link_to 'Edit Listing', edit_listing_path(@listing) %>
