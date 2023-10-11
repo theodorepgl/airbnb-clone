@@ -11,9 +11,8 @@
 	<%= f.label :capacity %>
 	<%= f.number_field :capacity %>
 	<br><br>
-	<%= f.label :available %>
-	<%= f.check_box :available %>
-	<br><br>
+	<%= f.label :availability %>
+	<%= f.check_box :availability %>
 	<br><br>
 	<%= f.label :property_type %>
 	<%= f.text_field :property_type %>
@@ -27,6 +26,6 @@
 	<% if @listing.new_record? %>
 		<%= f.submit 'Create Listing' %>
 	<% else %>
-		<%=	f.submit 'Edit Listing' %>
+		<%=	f.submit 'Update Listing' %>
 	<% end %>
 <% end %>

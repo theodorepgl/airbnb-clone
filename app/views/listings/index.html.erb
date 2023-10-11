@@ -1,9 +1,9 @@
-<h1>Listings index</h1>
+<h1>Your Listing</h1>
 
 <% if @listings.any? %>
 	<% @listings.each do |listing| %>
 		<%= link_to listing_path(listing) do %>
-			<%= listings.title %><br><br>
+			<%= listing.title %><br><br>
 		<% end %>
 	<% end %>
 <% else %>
@@ -11,4 +11,3 @@
 <% end %>
 
 <%= link_to 'Create New Listing', new_listing_path %><br>
-<%= link_to 'Home', root_path %>
