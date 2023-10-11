@@ -10,7 +10,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body> 
+  <% if user_signed_in? %>
+    <%= current_user.email %>
+    <div>
+    <%= link_to 'Your Listings', listings_path %><br>
+    <%= link_to 'Your Bookings', bookings_path %><br>
+    <%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete} %>
+    </div>
+  <% else %>
+    <%= link_to 'Sign In', new_user_session_path %>
+  <% end %>
+
     <%= yield %>
+  
   </body>
 </html>
