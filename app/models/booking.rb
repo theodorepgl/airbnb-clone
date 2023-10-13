@@ -3,14 +3,14 @@ class Booking < ApplicationRecord
   belongs_to :listing
 
   after_create :calculate_duration
-  after_create :calculate_total_price
+  after_create :calculate_price
 
   def calculate_duration
-    self.duration = (check_in - check_out).to_i
-    self.save    
+    self.duration = (check_in - check_out).to_i  
+    self.save  
   end
 
-  def calculate_total_price
+  def calculate_price
     self.total_price = duration * listing.price
     self.save
   end

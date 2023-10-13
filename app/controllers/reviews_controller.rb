@@ -18,4 +18,8 @@ class ReviewsController < ApplicationController
 			render :new 
 		end
 	end
+
+	# def review_params
+	# 	params.require(:review).permit(:comment, :rating, :reviewable_type, :reviewable_id)
+	# end
 end
