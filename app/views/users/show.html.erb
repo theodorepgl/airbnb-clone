@@ -1,0 +1,45 @@
+<h1>User Dashboard of <%= @user.email%></h1>
+
+<%if user_signed_in? && current_user != @user%>
+	<h2>Rate this user.</h2>
+	<%= link_to 'Create user review', new_review_path(user_id: @user.id)%><br>
+<%else%>
+	<h3>Bookings</h3>
+	<%if @user.bookings.any?%>
+<div class="row row-cols-auto px-2">	
+	<% @user.bookings.each do |booking|%>
+	<div class="col-md-2" > 
+		<div class="card border-success h-100 mb-3" style="width: 13rem;">
+		<h4 class="text-success"><%= booking.listing.title%></h4><br>
+		Check In Date: <%= booking.check_in%><br>
+		Check Out Date: <%= booking.check_out%><br>
+		Duration: <%= booking.duration%> days<br>
+		Total Price: RM <%= booking.total_price%>
+		</div>
+	</div>
+	<%end%>
+</div>
+	<%else%>
+		<p>No bookings found.</p>
+	<%end%>
+<%end%>
+
+<h3>User Profile Reviews</h3>
+<%if @user.reviews.any?%>
+<div class="row row-cols-auto px-2">	
+	<% @user.reviews.each do |review|%>
+	<div class="col-md-2" > 
+		<div class="card border-success h-100 mb-3" style="width: 13rem;">
+			<%= review.comment%><br>
+			Rating: <%= review.rating%>/5 			
+			<%= review.created_at%><br>
+			<%= review.user.email%>				
+		</div>				
+	</div>
+	<%end%>
+</div>
+<%else%>
+<p>No reviews.</p>
+<%end%>
+
+

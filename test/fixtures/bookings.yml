@@ -3,8 +3,8 @@
 one:
   user: one
   listing: one
-  check_in: 2023-10-10 14:38:41
-  check_out: 2023-10-10 14:38:41
+  check_in: 2023-10-10 22:27:33
+  check_out: 2023-10-10 22:27:33
   duration: 1
   confirmed: false
   total_price: 9.99
@@ -12,8 +12,8 @@ one:
 two:
   user: two
   listing: two
-  check_in: 2023-10-10 14:38:41
-  check_out: 2023-10-10 14:38:41
+  check_in: 2023-10-10 22:27:33
+  check_out: 2023-10-10 22:27:33
   duration: 1
   confirmed: false
   total_price: 9.99
