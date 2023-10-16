@@ -1,9 +1,8 @@
 class ListingsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!
 	before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
-	def index #---move to pages controller
-		@listings = Listing.all
+	def index
+		@listings = current_user.listings.all
 	end
 
 	def new
@@ -12,32 +11,32 @@ class ListingsController < ApplicationController
 
 	def create
 		@listing = current_user.listings.create(listing_params)
+
 		if @listing.save
-			redirect_to listings_path(@listings)
-		else
-			render :end
-		end
+			redirect_to listing_path(@listing)
+		else 
+			render :new 
+		end		
 	end
 
-	def show		
+	def show
 	end
 
 	def edit
 	end
 
 	def update
-		@listing.update(listing_params)
-		if @listing.save
+		if @listing.update(listing_params)
 			redirect_to listing_path(@listing)
 		else
-			render :edit
+			render :edit 
 		end
 	end
 
-	def destroy		
+	def destroy
 		@listing.destroy
-		# redirect_to listings_path(@listings)
-		redirect_to root_path
+
+		redirect_to listings_path
 	end
 
 	private
@@ -45,7 +44,7 @@ class ListingsController < ApplicationController
 			@listing = Listing.find(params[:id])
 		end
 
-	def listing_params
-		params.require(:listing).permit(:title, :description, :property_type, :location, :price, :rooms, :capacity, :available, photos: [])
-	end
+		def listing_params
+			params.require(:listing).permit(:title, :description, :rooms, :capacity, :availability, :price, :location, :property_type)
+		end
 end

@@ -1,7 +1,9 @@
-<h1>Listing Name: <%= @booking.listing.title%></h1>
+<h1>Booking for <%= @booking.listing.title %></h1>
+<h4>Hosted by <%= @booking.listing.user.email %></h4>
+
 <br>
 
-<h3>Check In Time: <%= @booking.check_in%> </h3>
-<h3>Check Out Time: <%= @booking.check_out%></h3>
-<h4>Duration: <%= @booking.duration%> days</h4>
-<h4>Total Price: RM <%= @booking.total_price%></h4>
+<p>Check in date: <%= @booking.check_in %></p>
+<p>Check out date: <%= @booking.check_out %></p>
+<p>Days Booked: <%= @booking.duration %></p>
+<p>Total Amount: <%= @booking.total_price %></p>
