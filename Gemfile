@@ -39,6 +39,17 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+    # Deployment
+  gem 'capistrano', '< 5'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma', '< 5'
+  gem 'capistrano3-nginx'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-rails-db'
+  gem 'capistrano-rake', require: false
 end
 
 group :test do
