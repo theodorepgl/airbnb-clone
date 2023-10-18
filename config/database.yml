@@ -12,6 +12,3 @@ default: &default
 development:
   <<: *default
   database: airbnb-clone
-  host: localhost
-  user: postgres 
-  password: Elevate2023!
