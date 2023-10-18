@@ -30,6 +30,9 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+gem 'ed25519'
+gem 'bcrypt_pbkdf', '< 2.0'
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
