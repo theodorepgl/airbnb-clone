@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
 		@listing = Listing.find_by(id: params[:booking][:listing_id])
 		if available_dates?(params[:check_in]),params[:check_out],@listing)
 			@booking = current_user.bookings.create(booking_params)
-			@booking.lissting_id = @listing.id
+			@booking.listing_id = @listing.id
 			if @booking.save
 				redirect_to booking_path(@booking)
 			else
